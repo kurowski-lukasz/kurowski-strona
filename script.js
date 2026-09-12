@@ -38,7 +38,7 @@ const SUBJECTS = [
     description: "Studia przypadków i ramy analityczne strategii klimatycznych przedsiębiorstw.",
     password: "JST_2026",
     materials: [
-      { title: "W1.pdf", url: "materialy/podstawy-ekonomii/W1.pdf" }
+      { title: "W1.pdf", url: "materialy/zarzadzanie-klimat/W1.pdf" }
     ]
 
   },
@@ -50,7 +50,7 @@ const SUBJECTS = [
     description: "Wpływ działalności człowieka na systemy klimatyczne, glebowe i biosferyczne.",
     password: "Antropo_2026",
     materials: [
-      { title: "W1.pdf", url: "materialy/podstawy-ekonomii/W1.pdf" }
+      { title: "W1.pdf", url: "materialy/antropocen/W1.pdf" }
     ]
   },
   {
@@ -61,7 +61,7 @@ const SUBJECTS = [
     description: "Zanieczyszczenia powietrza, regulacje ochrony atmosfery i metody monitoringu.",
     password: "MSOS_2026",
     materials: [
-      { title: "W1.pdf", url: "materialy/podstawy-ekonomii/W1.pdf" }
+      { title: "W1.pdf", url: "materialy/atmosfera/W1.pdf" }
     ]
   }
 ];
