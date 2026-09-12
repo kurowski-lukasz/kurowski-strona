@@ -19,6 +19,42 @@
 
 const SUBJECTS = [
   {
+    id: "bankowosc",
+    title: "Bankowość",
+    tabLabel: "Bankowość",
+    code: "",
+    description: "Wykłady, ćwiczenia i literatura do przedmiotu z zakresu bankowości.",
+    password: "Ryzyko_2026",
+    materials: []
+  },
+  {
+    id: "finanse-zrownowazone",
+    title: "Finanse zrównoważone",
+    tabLabel: "Finanse zrównoważone",
+    code: "",
+    description: "Wykłady, ćwiczenia i literatura do przedmiotu z zakresu finansów zrównoważonych.",
+    password: "Sust_2026",
+    materials: []
+  },
+  {
+    id: "zarzadzanie-finansami-osobistymi",
+    title: "Zarządzanie finansami osobistymi",
+    tabLabel: "Zarządzanie finansami osobistymi",
+    code: "",
+    description: "Wykłady, ćwiczenia i literatura do przedmiotu z zakresu zarządzania finansami osobistymi.",
+    password: "ZFO_2026",
+    materials: []
+  },
+  {
+    id: "zarzadzanie-bankiem",
+    title: "Zarządzanie bankiem",
+    tabLabel: "Zarządzanie bankiem",
+    code: "",
+    description: "Wykłady, ćwiczenia i literatura do przedmiotu z zakresu zarządzania bankiem.",
+    password: "BM_2026",
+    materials: []
+  },
+  {
     id: "podstawy-ekonomii",
     title: "Podstawy ekonomii",
     tabLabel: "Podstawy ekonomii",
@@ -222,6 +258,16 @@ function renderTabs() {
   const indicator = document.createElement("span");
   indicator.className = "tab-indicator";
   nav.appendChild(indicator);
+  updateTabsAlignment();
+}
+
+// Wyśrodkuj zakładki, gdy wszystkie mieszczą się na ekranie bez przewijania;
+// w przeciwnym razie wyrównaj do lewej, żeby pierwsza zakładka nigdy się nie chowała.
+function updateTabsAlignment() {
+  const nav = document.getElementById("tabs");
+  if (!nav) return;
+  const fits = nav.scrollWidth <= nav.clientWidth + 1;
+  nav.classList.toggle("tabs--centered", fits);
 }
 
 /* ---------------- Dane geograficzne (Natural Earth 110m, uproszczony ląd) ----------------
@@ -1201,6 +1247,7 @@ document.addEventListener("DOMContentLoaded", () => {
   activateTab(initial);
 
   window.addEventListener("resize", () => {
+    updateTabsAlignment();
     const active = ALL_TABS.find((t) =>
       document.querySelector(`.tab[data-tab-id="${t.id}"]`)?.classList.contains("is-active")
     );
