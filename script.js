@@ -26,7 +26,8 @@ const SUBJECTS = [
     description: "Wykłady, ćwiczenia i literatura do przedmiotu wprowadzającego w ekonomię.",
     password: "WGSR_2026",
     materials: [
-      { title: "Prezentacja 1 — wprowadzenie.pdf", url: "materialy/podstawy-ekonomii/prezentacja-1-wprowadzenie.pdf" }
+      { title: "W1.pdf", url: "materialy/podstawy-ekonomii/W1.pdf" },
+      { title: "W2.pdf", url: "materialy/podstawy-ekonomii/W2.pdf" }
     ]
   },
   {
