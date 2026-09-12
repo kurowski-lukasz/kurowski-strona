@@ -79,7 +79,7 @@ body {
   top: 0;
   z-index: 20;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 4px;
   overflow-x: auto;
   scrollbar-width: none;
@@ -91,6 +91,11 @@ body {
 }
 
 .tabs::-webkit-scrollbar { display: none; }
+
+.tabs.tabs--centered {
+  justify-content: center;
+}
+
 
 .tab {
   position: relative;
