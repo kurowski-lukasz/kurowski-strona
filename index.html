@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dr hab. Łukasz Kurowski, prof. ucz. — strona akademicka</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="flow-field" aria-hidden="true"></canvas>
+
+<header class="topbar">
+  <div class="wrap topbar__row">
+    <a href="#home" class="topbar__name">Ł. Kurowski</a>
+    <nav id="tabs" class="tabs" aria-label="Nawigacja główna"></nav>
+  </div>
+</header>
+
+<!-- ============ Strona główna ============ -->
+<section id="panel-home" class="panel panel--home is-active">
+  <div class="hero">
+    <div class="hero__content wrap">
+      <p class="hero__role">Ekspert w zakresie bankowości, edukacji klimatycznej, edukacji finansowej, ekonomista, geograf</p>
+      <h1 class="hero__name">dr hab. Łukasz Kurowski, prof. ucz.</h1>
+      <p class="hero__affiliation">
+        Szkoła Główna Handlowa (Kolegium Zarządzania i Finansów; Katedra Systemu Finansowego)<br>
+        Uniwersytet Warszawski (Wydział Geografii i Studiów Regionalnych; Katedra Geografii Regionalnej)
+      </p>
+      <ul class="hero__links">
+        <li><a href="https://orcid.org/0000-0002-3306-4276" target="_blank" rel="noopener">ORCID</a></li>
+        <li><a href="https://scholar.google.com/citations?user=1RGqE28AAAAJ&hl=pl" target="_blank" rel="noopener">Google Scholar</a></li>
+        <li><a href="https://pl.linkedin.com/in/%C5%82ukasz-kurowski-a52190b0" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ O mnie ============ -->
+<section id="panel-about" class="panel wrap">
+  <h2>O mnie</h2>
+  <div class="about__layout">
+    <img
+      class="about__photo"
+      src="data:image/jpeg;base64,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"
+      alt="dr hab. Łukasz Kurowski, prof. ucz."
+      width="200" height="200"
+    >
+    <div class="about__text">
+      <p>
+        dr hab. Łukasz Kurowski, prof. ucz. – ekonomista, geograf, ekspert w zakresie
+        bankowości, stabilności finansowej, ryzyka klimatycznego oraz edukacji
+        klimatycznej i finansowej. Przez niemal 10 lat łączył pracę akademicką
+        z praktyką w sektorze prywatnym, zdobywając doświadczenie m.in. w NBP,
+        Citibanku oraz ING Banku Śląskim.
+      </p>
+      <p>
+        W 2023 r. ukończył staż badawczy na Uniwersytecie Islandzkim, gdzie
+        pracował nad monografią habilitacyjną pt. „Ryzyko klimatyczne w sektorze
+        bankowym”. Autor ponad 30 publikacji, które ukazały się głównie
+        w renomowanych międzynarodowych czasopismach naukowych (m.in. Journal
+        of Financial Stability, Climate Policy, Journal of Cleaner Production,
+        Journal of Sustainable Finance and Investment). Wyniki swoich badań
+        prezentował na prestiżowych konferencjach naukowych, między innymi
+        w Oksfordzie, Mediolanie, Neapolu oraz Montpellier. Za swoją działalność
+        naukową otrzymał stypendium START Fundacji na rzecz Nauki Polskiej dla
+        wybitnych młodych uczonych, dwie nagrody za najlepszy artykuł,
+        indywidualne nagrody Rektora SGH za działalność naukową oraz nagrodę
+        Polskiego Stowarzyszenia Finansów i Bankowości za najlepsze wystąpienie
+        podczas jednej z uznanych konferencji naukowych.
+      </p>
+      <p>
+        Aktywnie działa na rzecz popularyzacji wiedzy finansowej oraz wiedzy
+        o klimacie. Wspiera edukację klimatyczną i finansową wśród uczniów
+        szkół ponadpodstawowych oraz nauczycieli. Chętnie angażuje się
+        w różnorodne inicjatywy, wygłaszając prelekcje na temat ESG dla
+        środowiska przedsiębiorców. Od początku swojej kariery zawodowo
+        związany ze Szkołą Główną Handlową w Warszawie, a od 2025 r. jest
+        również zatrudniony na Wydziale Geografii i Studiów Regionalnych
+        Uniwersytetu Warszawskiego w Katedrze Geografii Regionalnej.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Przedmioty — generowane z CONFIG w script.js ============ -->
+<section id="subject-panels"></section>
+
+<!-- ============ Kontakt ============ -->
+<section id="panel-contact" class="panel wrap">
+  <h2>Kontakt</h2>
+  <p>
+    dr hab. Łukasz Kurowski, prof. ucz.<br>
+    Szkoła Główna Handlowa (Kolegium Zarządzania i Finansów)<br>
+    Uniwersytet Warszawski (Wydział Geografii i Studiów Regionalnych)<br>
+    Pokój: 205 (Pałac Uruskich-Czetwertyńskich, Krakowskie Przedmieście 30)<br>
+    Konsultacje: wkrótce<br>
+    E-mail: <a href="mailto:l.kurowski@uw.edu.pl">l.kurowski@uw.edu.pl</a>
+  </p>
+</section>
+
+<footer class="footer wrap">
+  <p>© <span id="year"></span> dr hab. Łukasz Kurowski, prof. ucz.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

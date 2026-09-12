@@ -1,0 +1,428 @@
+:root {
+  --bg: #0A1420;
+  --bg-raised: #101F35;
+  --bg-raised-2: #16283F;
+  --navy: #223A63;
+  --turquoise: #2FB3AB;
+  --gold: #FFC125;
+  --rose: #B03470;
+  --error: #E8483F;
+  --text: #ECEDE7;
+  --text-soft: #93A0B2;
+  --line: rgba(255, 255, 255, 0.10);
+
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "IBM Plex Sans", -apple-system, Segoe UI, sans-serif;
+  --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+
+  --max: 760px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ================= Topbar / Tabs ================= */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(10, 20, 32, 0.86);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar__row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 60px;
+  max-width: 1440px;
+}
+
+.topbar__name {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  height: 100%;
+}
+
+.tabs::-webkit-scrollbar { display: none; }
+
+.tab {
+  position: relative;
+  flex: 0 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  background: none;
+  border: none;
+  color: var(--text-soft);
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+
+.tab:hover { color: var(--text); }
+
+.tab.is-active { color: var(--text); }
+
+.tab-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: left 0.28s cubic-bezier(0.4, 0, 0.2, 1), width 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ================= Panels ================= */
+
+.panel {
+  display: none;
+  padding: 56px 24px 72px;
+  border-top: 1px solid var(--line);
+  animation: fade-in 0.35s ease;
+}
+
+.panel.is-active { display: block; }
+
+.panel--home {
+  padding: 0;
+  border-top: none;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel { animation: none; }
+  .tab-indicator { transition: none; }
+}
+
+.panel h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.7rem;
+  margin: 0 0 20px;
+  color: var(--text);
+}
+
+.panel p { max-width: 64ch; color: var(--text); }
+
+.panel p a {
+  color: var(--turquoise);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.panel p a:hover { border-bottom-color: var(--turquoise); }
+
+.about__layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.about__photo {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+}
+
+.about__text {
+  flex: 1 1 420px;
+  min-width: 0;
+}
+
+.about__text p {
+  max-width: 64ch;
+}
+
+.about__text p + p {
+  margin-top: 18px;
+}
+
+/* ================= Canvas tła (globalny, widoczny na każdej zakładce) ================= */
+
+#flow-field {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.panel,
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  position: relative;
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  padding: 40px 24px;
+}
+
+.hero__role {
+  color: var(--text-soft);
+  font-size: 1.05rem;
+  margin: 0 0 14px;
+}
+
+.hero__name {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.9rem, 4.4vw, 2.9rem);
+  line-height: 1.15;
+  margin: 0 0 18px;
+  color: var(--text);
+  text-shadow: 0 2px 40px rgba(10, 20, 32, 0.9);
+}
+
+.hero__affiliation {
+  font-size: 1.02rem;
+  max-width: 58ch;
+  color: var(--text-soft);
+  margin: 0 0 22px;
+}
+
+.hero__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero__links a {
+  color: var(--turquoise);
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.hero__links a:hover {
+  border-bottom-color: var(--turquoise);
+}
+
+/* ================= Subject pages ================= */
+
+.subject-panel {
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+/* Karta czytelności -- na zakładkach innych niż strona główna tekst siedzi na
+   lekko przyciemnionym, rozmytym tle, żeby animacja w tle była widoczna, ale
+   nie utrudniała czytania dłuższych akapitów. */
+#panel-about,
+#panel-contact,
+.subject-panel {
+  background: rgba(10, 20, 32, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 40px 36px 48px;
+  margin-top: 24px;
+}
+
+.subject-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.subject-head h2 { margin: 0; }
+
+.subject-code {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--turquoise);
+  border: 1px solid var(--turquoise);
+  border-radius: 3px;
+  padding: 3px 8px;
+  letter-spacing: 0.02em;
+}
+
+.subject-desc {
+  color: var(--text-soft);
+  margin: 10px 0 34px;
+  max-width: 60ch;
+}
+
+.subject-lock form {
+  display: flex;
+  gap: 10px;
+  max-width: 380px;
+  flex-wrap: wrap;
+}
+
+.subject-lock input[type="password"] {
+  flex: 1;
+  min-width: 200px;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  background: var(--bg-raised);
+  color: var(--text);
+  border-radius: 4px;
+}
+
+.subject-lock input[type="password"]:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.subject-lock button {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 11px 20px;
+  border: none;
+  background: var(--gold);
+  color: #1B1400;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+
+.subject-lock button:hover { filter: brightness(1.08); }
+
+.subject-error {
+  margin: 10px 0 0;
+  font-size: 0.88rem;
+  color: var(--error);
+  min-height: 1.2em;
+}
+
+.subject-materials ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 68ch;
+}
+
+.subject-materials li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.subject-materials li:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.material-name {
+  color: var(--text);
+  font-size: 0.98rem;
+}
+
+.material-download {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-family: var(--mono);
+  color: var(--turquoise);
+  border: 1px solid var(--turquoise);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.material-download:hover {
+  background: var(--turquoise);
+  color: #0A1420;
+}
+
+.subject-unlocked-note {
+  color: var(--turquoise);
+  font-size: 0.88rem;
+  margin: 0 0 18px;
+}
+
+/* ================= Focus & footer ================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.footer {
+  padding: 32px 24px 48px;
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--line);
+}
+
+/* ================= Mobile ================= */
+
+@media (max-width: 560px) {
+  .topbar__row { gap: 16px; }
+  .hero { min-height: 86vh; }
+  .subject-lock form { flex-direction: column; }
+  .subject-lock button { width: 100%; }
+  .about__layout { flex-direction: column; align-items: flex-start; }
+  .about__photo { width: 128px; height: 128px; }
+  .subject-materials li { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
