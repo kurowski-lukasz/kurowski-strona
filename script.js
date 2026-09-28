@@ -61,7 +61,10 @@ const SUBJECTS = [
     code: "1900-1-PEKON",
     description: "Wykłady, ćwiczenia i literatura do przedmiotu wprowadzającego w ekonomię.",
     password: "WGSR_2026",
-    materials: []
+    materials: [
+      { title: "W1 Wprowadzenie.pdf", url: "materialy/podstawy-ekonomii/W1 Wprowadzenie.pdf.pdf" },
+      { title: "W2 narzędzia analizy ekonomicznej.pdf", url: "materialy/podstawy-ekonomii/W2 narzędzia analizy ekonomicznej.pdf" }
+    ]
   },
   {
     id: "zarzadzanie-klimat",
