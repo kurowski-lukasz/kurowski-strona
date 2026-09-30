@@ -74,7 +74,8 @@ const SUBJECTS = [
     description: "Studia przypadków i ramy analityczne strategii klimatycznych przedsiębiorstw.",
     password: "JST_2026",
     materials: [
-      { title: "W1.pdf", url: "materialy/zarzadzanie-klimat/W1.pdf" }
+      { title: "Warsztat 1.pdf", url: "materialy/zarzadzanie-klimat/Warsztat 1.pdf" }
+      { title: "Konwersatorium 1.pdf", url: "materialy/zarzadzanie-klimat/Konwersatorium 1.pdf" }
     ]
   },
   {
