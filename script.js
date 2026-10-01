@@ -74,8 +74,26 @@ const SUBJECTS = [
     description: "Studia przypadków i ramy analityczne strategii klimatycznych przedsiębiorstw.",
     password: "JST_2026",
     materials: [
-      { title: "Warsztat 1.pdf", url: "materialy/zarzadzanie-klimat/Warsztat 1.pdf" },
-      { title: "Konwersatorium 1.pdf", url: "materialy/zarzadzanie-klimat/Konwersatorium 1.pdf" }
+      { title: "Konwersatorium 1", url: "materialy/zarzadzanie-klimat/Konwersatorium 1.pdf" },
+      { title: "Konwersatorium 2", url: "materialy/zarzadzanie-klimat/Konwersatorium 2.pdf" },
+      { title: "Konwersatorium 3", url: "materialy/zarzadzanie-klimat/Konwersatorium 3.pdf" },
+      { title: "Ćwiczenia 1 – polecenia", url: "materialy/zarzadzanie-klimat/Ćw 1_polecenia.pdf" },
+      { title: "Ćwiczenia 1 – emisje (Excel)", url: "materialy/zarzadzanie-klimat/Ćw 1 emisje.xlsx" },
+      { title: "Ćwiczenia 2 – polecenie", url: "materialy/zarzadzanie-klimat/Ćw 2_polecenie.pdf" },
+      { title: "Ćwiczenia 2 – KGHM", url: "materialy/zarzadzanie-klimat/Ćw 2_KGHM.pdf" },
+      { title: "Ćwiczenia 2 – PGE", url: "materialy/zarzadzanie-klimat/Ćw 2_PGE.pdf" },
+      { title: "Ćwiczenia 3 – polecenia", url: "materialy/zarzadzanie-klimat/Ćw 3_polecenia.pdf" },
+      { title: "Ćwiczenia 3 – baza zdarzeń (Excel)", url: "materialy/zarzadzanie-klimat/Ćw_3_baza zdarzeń.xlsx" },
+      { title: "Ćwiczenia 4 – polecenia", url: "materialy/zarzadzanie-klimat/Ćw 4_polecenia.pdf" },
+      { title: "Ćwiczenia 4 – ankieta (Excel)", url: "materialy/zarzadzanie-klimat/Ćw_4_ankieta.xlsx" },
+      { title: "Warsztat 1", url: "materialy/zarzadzanie-klimat/Warsztat 1_WGSR.pdf" },
+      { title: "Warsztat 2", url: "materialy/zarzadzanie-klimat/Warsztat 2_WGSR.pdf" },
+      { title: "Warsztat 3", url: "materialy/zarzadzanie-klimat/Warsztat 3_WGSR.pdf" },
+      { title: "Warsztat 4", url: "materialy/zarzadzanie-klimat/Warsztat 4_WGSR.pdf" },
+      { title: "Warsztat 5", url: "materialy/zarzadzanie-klimat/Warsztat_5_WGSR.pdf" },
+      { title: "Warsztat 6", url: "materialy/zarzadzanie-klimat/Warsztat_6_WGSR.pdf" },
+      { title: "Warsztat 10", url: "materialy/zarzadzanie-klimat/Warsztat 10_WGSR.pdf" },
+      { title: "Warsztat 11", url: "materialy/zarzadzanie-klimat/Warsztat_11_WGSR.pdf" }
     ]
   },
   {
