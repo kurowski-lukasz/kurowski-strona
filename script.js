@@ -43,7 +43,11 @@ const SUBJECTS = [
     code: "",
     description: "Wykłady, ćwiczenia i literatura do przedmiotu z zakresu zarządzania finansami osobistymi.",
     password: "ZFO_2026",
-    materials: []
+    materials: [
+      { title: "ZFO_2_1 Edukacja a sytuacja finansowa.pdf", url: "materialy/zarzadzanie-finansami-osobistymi/ZFO_2_1.pdf" },
+      { title: "ZFO_2_2 Edukacja finansowa – badania własne.pdf", url: "materialy/zarzadzanie-finansami-osobistymi/ZFO_2_2.pdf" },
+      { title: "ZFO_2_1_e Ćwiczenie.xlsx", url: "materialy/zarzadzanie-finansami-osobistymi/ZFO_2_1_e.xlsx" }
+    ]
   },
   {
     id: "zarzadzanie-bankiem",
