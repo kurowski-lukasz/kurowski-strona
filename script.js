@@ -35,7 +35,9 @@ const SUBJECTS = [
     code: "",
     description: "Wykłady, ćwiczenia i literatura do przedmiotu z zakresu finansów zrównoważonych — studia stacjonarne.",
     password: "FZ_2026_stacjo",
-    materials: [],
+    materials: [
+      { title: "FZ_W1_s.pdf", url: "materialy/finanse-zrownowazone-stacjonarne/FZ_W1_s.pdf" }
+    ],
     announcements: []
   },
   {
@@ -45,7 +47,9 @@ const SUBJECTS = [
     code: "",
     description: "Wykłady, ćwiczenia i literatura do przedmiotu z zakresu finansów zrównoważonych — studia niestacjonarne.",
     password: "FZnst_2026",
-    materials: [],
+    materials: [
+      { title: "FZ_W1_ns.pdf", url: "materialy/finanse-zrownowazone-niestacjonarne/FZ_W1_ns.pdf" }
+    ],
     announcements: []
   },
   {
