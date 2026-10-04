@@ -25,16 +25,28 @@ const SUBJECTS = [
     code: "",
     description: "Wykłady, ćwiczenia i literatura do przedmiotu z zakresu bankowości.",
     password: "Ryzyko_2026",
-    materials: []
+    materials: [],
+    announcements: []
   },
   {
-    id: "finanse-zrownowazone",
-    title: "Finanse zrównoważone",
-    tabLabel: "Finanse zrównoważone",
+    id: "finanse-zrownowazone-stacjonarne",
+    title: "Finanse zrównoważone (stacjonarne)",
+    tabLabel: "Finanse zrównoważone (stacjonarne)",
     code: "",
-    description: "Wykłady, ćwiczenia i literatura do przedmiotu z zakresu finansów zrównoważonych.",
-    password: "Sust_2026",
-    materials: []
+    description: "Wykłady, ćwiczenia i literatura do przedmiotu z zakresu finansów zrównoważonych — studia stacjonarne.",
+    password: "FZ_2026_stacjo",
+    materials: [],
+    announcements: []
+  },
+  {
+    id: "finanse-zrownowazone-niestacjonarne",
+    title: "Finanse zrównoważone (niestacjonarne)",
+    tabLabel: "Finanse zrównoważone (niestacjonarne)",
+    code: "",
+    description: "Wykłady, ćwiczenia i literatura do przedmiotu z zakresu finansów zrównoważonych — studia niestacjonarne.",
+    password: "FZnst_2026",
+    materials: [],
+    announcements: []
   },
   {
     id: "zarzadzanie-finansami-osobistymi",
@@ -47,7 +59,8 @@ const SUBJECTS = [
       { title: "ZFO_2_1.pdf", url: "materialy/zarzadzanie-finansami-osobistymi/ZFO_2_1.pdf" },
       { title: "ZFO_2_2.pdf", url: "materialy/zarzadzanie-finansami-osobistymi/ZFO_2_2.pdf" },
       { title: "ZFO_2_1_e.xlsx", url: "materialy/zarzadzanie-finansami-osobistymi/ZFO_2_1_e.xlsx" }
-    ]
+    ],
+    announcements: []
   },
   {
     id: "zarzadzanie-bankiem",
@@ -56,7 +69,8 @@ const SUBJECTS = [
     code: "",
     description: "Wykłady, ćwiczenia i literatura do przedmiotu z zakresu zarządzania bankiem.",
     password: "BM_2026",
-    materials: []
+    materials: [],
+    announcements: []
   },
   {
     id: "podstawy-ekonomii",
@@ -98,7 +112,8 @@ const SUBJECTS = [
       { title: "Warsztat 6", url: "materialy/zarzadzanie-klimat/Warsztat_6_WGSR.pdf" },
       { title: "Warsztat 10", url: "materialy/zarzadzanie-klimat/Warsztat 10_WGSR.pdf" },
       { title: "Warsztat 11", url: "materialy/zarzadzanie-klimat/Warsztat_11_WGSR.pdf" }
-    ]
+    ],
+    announcements: []
   },
   {
     id: "antropocen",
@@ -109,7 +124,8 @@ const SUBJECTS = [
     password: "Antropo_2026",
     materials: [
       { title: "W1.pdf", url: "materialy/antropocen/W1.pdf" }
-    ]
+    ],
+    announcements: []
   },
   {
     id: "atmosfera",
@@ -120,7 +136,8 @@ const SUBJECTS = [
     password: "MSOS_2026",
     materials: [
       { title: "W1.pdf", url: "materialy/atmosfera/W1.pdf" }
-    ]
+    ],
+    announcements: []
   }
 ];
 
@@ -145,7 +162,7 @@ function setRandomHomeBanner() {
   el.style.backgroundImage = `url("${pick}")`;
 }
 
-const STATIC_TABS_BEFORE = [{ id: "home", label: "Strona główna" }, { id: "about", label: "O mnie" }];
+const STATIC_TABS_BEFORE = [{ id: "home", label: "Strona główna" }, { id: "about", label: "O mnie" }, { id: "publikacje", label: "Publikacje" }];
 const STATIC_TABS_AFTER = [{ id: "contact", label: "Kontakt" }];
 
 const ALL_TABS = [
@@ -166,6 +183,15 @@ function setUnlocked(subjectId) {
   sessionStorage.setItem(STORAGE_PREFIX + subjectId, "true");
 }
 
+function materialDownloadLabel(url) {
+  const ext = (url.split(".").pop() || "").toLowerCase();
+  if (ext === "pdf") return "Pobierz PDF";
+  if (ext === "xlsx" || ext === "xls") return "Pobierz Excel";
+  if (ext === "docx" || ext === "doc") return "Pobierz Word";
+  if (ext === "pptx" || ext === "ppt") return "Pobierz prezentację";
+  return "Pobierz plik";
+}
+
 function renderMaterialsList(materials) {
   if (!materials.length) return "<p>Materiały pojawią się tutaj wkrótce.</p>";
   const items = materials
@@ -173,11 +199,32 @@ function renderMaterialsList(materials) {
       (m) => `
       <li>
         <span class="material-name">${m.title}</span>
-        <a class="material-download" href="${m.url}" download>Pobierz PDF</a>
+        <a class="material-download" href="${m.url}" download>${materialDownloadLabel(m.url)}</a>
       </li>`
     )
     .join("");
   return `<ul>${items}</ul>`;
+}
+
+function renderAnnouncementsList(announcements) {
+  const hasItems = announcements && announcements.length;
+  const body = hasItems
+    ? `<ul class="announcements-list">${announcements
+        .map(
+          (a) => `
+      <li class="announcement-item">
+        ${a.date ? `<span class="announcement-date">${a.date}</span>` : ""}
+        <p class="announcement-text">${a.text}</p>
+      </li>`
+        )
+        .join("")}</ul>`
+    : `<p class="announcements-empty">Tu pojawią się ogłoszenia prowadzącego, gdy zostaną dodane.</p>`;
+
+  return `
+    <div class="subject-announcements-col">
+      <h3 class="subject-announcements-title">Ogłoszenia</h3>
+      ${body}
+    </div>`;
 }
 
 function buildSubjectPanel(subject) {
@@ -205,7 +252,12 @@ function buildSubjectPanel(subject) {
 
       <div class="subject-materials" ${unlocked ? "" : "hidden"}>
         <p class="subject-unlocked-note">Odblokowano — materiały poniżej.</p>
-        ${renderMaterialsList(subject.materials)}
+        <div class="subject-unlocked-grid">
+          <div class="subject-materials-col">
+            ${renderMaterialsList(subject.materials)}
+          </div>
+          ${renderAnnouncementsList(subject.announcements)}
+        </div>
       </div>
     </div>
   `;
