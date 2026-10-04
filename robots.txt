@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kurowski-lukasz.github.io/kurowski-strona/sitemap.xml
