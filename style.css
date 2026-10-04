@@ -181,6 +181,36 @@ body {
 
 .panel p a:hover { border-bottom-color: var(--turquoise); }
 
+.contact-name {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--text);
+  margin: 0 0 32px;
+}
+
+.contact-grid {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.contact-block {
+  flex: 1 1 280px;
+  min-width: 0;
+}
+
+.contact-block h3 {
+  margin: 0 0 14px;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--gold);
+}
+
+.contact-block p {
+  line-height: 1.7;
+}
+
 .about__layout {
   display: flex;
   gap: 40px;
