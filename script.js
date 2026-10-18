@@ -86,7 +86,7 @@ const SUBJECTS = [
     password: "WGSR_2026",
     materials: [
       { title: "W1 Wprowadzenie.pdf", url: "materialy/podstawy-ekonomii/W1 Wprowadzenie.pdf" },
-      { title: "W1 Narzędzia analizy ekonomicznej.pdf", url: "materialy/podstawy-ekonomii/W2 narzędzia analizy ekonomicznej.pdf" },
+      { title: "W2 Narzędzia analizy ekonomicznej.pdf", url: "materialy/podstawy-ekonomii/W2 narzędzia analizy ekonomicznej.pdf" },
     ]
   },
   {
