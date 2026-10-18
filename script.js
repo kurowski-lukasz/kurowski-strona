@@ -48,7 +48,8 @@ const SUBJECTS = [
     description: "Wykłady, ćwiczenia i literatura do przedmiotu z zakresu finansów zrównoważonych — studia niestacjonarne.",
     password: "FZnst_2026",
     materials: [
-      { title: "FZ_W1_ns.pdf", url: "materialy/finanse-zrownowazone-niestacjonarne/FZ_W1_ns.pdf" }
+      { title: "FZ_W1_ns.pdf", url: "materialy/finanse-zrownowazone-niestacjonarne/FZ_W1_ns.pdf" },
+      { title: "FZ_W1_ns.pdf", url: "materialy/finanse-zrownowazone-niestacjonarne/FZ_W3.pdf" }
     ],
     announcements: []
   },
@@ -84,7 +85,8 @@ const SUBJECTS = [
     description: "Wykłady, ćwiczenia i literatura do przedmiotu wprowadzającego w ekonomię.",
     password: "WGSR_2026",
     materials: [
-      { title: "W1 Wprowadzenie.pdf", url: "materialy/podstawy-ekonomii/W1 Wprowadzenie.pdf" }      
+      { title: "W1 Wprowadzenie.pdf", url: "materialy/podstawy-ekonomii/W1 Wprowadzenie.pdf" },
+      { title: "W1 Wprowadzenie.pdf", url: "materialy/podstawy-ekonomii/W2 narzędzia analizy ekonomicznej.pdf" },
     ]
   },
   {
