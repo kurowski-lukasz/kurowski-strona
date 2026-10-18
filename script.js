@@ -36,7 +36,8 @@ const SUBJECTS = [
     description: "Wykłady, ćwiczenia i literatura do przedmiotu z zakresu finansów zrównoważonych — studia stacjonarne.",
     password: "FZ_2026_stacjo",
     materials: [
-      { title: "FZ_W1_s.pdf", url: "materialy/finanse-zrownowazone-stacjonarne/FZ_W1_s.pdf" }
+      { title: "FZ_W1_s.pdf", url: "materialy/finanse-zrownowazone-stacjonarne/FZ_W1_s.pdf" },
+      { title: "FZ_W2_s.pdf", url: "materialy/finanse-zrownowazone-stacjonarne/FZ_W3.pdf" }
     ],
     announcements: []
   },
@@ -48,8 +49,7 @@ const SUBJECTS = [
     description: "Wykłady, ćwiczenia i literatura do przedmiotu z zakresu finansów zrównoważonych — studia niestacjonarne.",
     password: "FZnst_2026",
     materials: [
-      { title: "FZ_W1_ns.pdf", url: "materialy/finanse-zrownowazone-niestacjonarne/FZ_W1_ns.pdf" },
-      { title: "FZ_W1_ns.pdf", url: "materialy/finanse-zrownowazone-niestacjonarne/FZ_W3.pdf" }
+      { title: "FZ_W1_ns.pdf", url: "materialy/finanse-zrownowazone-niestacjonarne/FZ_W1_ns.pdf" }      
     ],
     announcements: []
   },
@@ -86,7 +86,7 @@ const SUBJECTS = [
     password: "WGSR_2026",
     materials: [
       { title: "W1 Wprowadzenie.pdf", url: "materialy/podstawy-ekonomii/W1 Wprowadzenie.pdf" },
-      { title: "W1 Wprowadzenie.pdf", url: "materialy/podstawy-ekonomii/W2 narzędzia analizy ekonomicznej.pdf" },
+      { title: "W1 Narzędzia analizy ekonomicznej.pdf", url: "materialy/podstawy-ekonomii/W2 narzędzia analizy ekonomicznej.pdf" },
     ]
   },
   {
