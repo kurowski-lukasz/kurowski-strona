@@ -87,7 +87,8 @@ const SUBJECTS = [
     materials: [
       { title: "W1 Wprowadzenie.pdf", url: "materialy/podstawy-ekonomii/W1 Wprowadzenie.pdf" },
       { title: "W2 Narzędzia analizy ekonomicznej.pdf", url: "materialy/podstawy-ekonomii/W2 narzędzia analizy ekonomicznej.pdf" },
-    ]
+    ],
+    announcements: [{ text: "Link do testu: test" }]
   },
   {
     id: "zarzadzanie-klimat",
