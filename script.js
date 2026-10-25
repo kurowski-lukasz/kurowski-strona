@@ -102,7 +102,7 @@ const SUBJECTS = [
       { title: "Konwersatorium 1", url: "materialy/zarzadzanie-klimat/Konwersatorium 1.pdf" },
       { title: "Konwersatorium 2", url: "materialy/zarzadzanie-klimat/Konwersatorium 2.pdf" },
       { title: "Konwersatorium 3", url: "materialy/zarzadzanie-klimat/Konwersatorium 3.pdf" },
-      { title: "Konwersatorium 3_aktualizacja", url: "materialy/zarzadzanie-klimat/Konwersatorium 3_aktualizcja.pdf" },
+      { title: "Konwersatorium 3_aktualizacja", url: "materialy/zarzadzanie-klimat/Konwersatorium 3_aktualizacja.pdf" },
       { title: "Ćwiczenia 1 – polecenia", url: "materialy/zarzadzanie-klimat/Ćw 1_polecenia.pdf" },
       { title: "Ćwiczenia 1 – emisje (Excel)", url: "materialy/zarzadzanie-klimat/Ćw 1 emisje.xlsx" },
       { title: "Ćwiczenia 2 – polecenie", url: "materialy/zarzadzanie-klimat/Ćw 2_polecenie.pdf" },
