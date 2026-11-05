@@ -88,6 +88,7 @@ const SUBJECTS = [
       { title: "W1 Wprowadzenie.pdf", url: "materialy/podstawy-ekonomii/W1 Wprowadzenie.pdf" },
       { title: "W2 Narzędzia analizy ekonomicznej.pdf", url: "materialy/podstawy-ekonomii/W2 narzędzia analizy ekonomicznej.pdf" },
       { title: "W3 Popyt, podaż i równowaga rynkowa.pdf", url: "materialy/podstawy-ekonomii/W3 Popyt, podaż i równowaga rynkowa.pdf" },
+      { title: "W4 Makroekonomia PKB i mnożnik.pdf", url: "materialy/podstawy-ekonomii/W4 Makroekonomia PKB i mnożnik.pdf" },
     ],
         announcements: [{ text: "Link do testu: <a href='' target='_blank' rel='noopener'>test</a>" }]
   },
