@@ -121,7 +121,8 @@ const SUBJECTS = [
       { title: "Warsztat 5", url: "materialy/zarzadzanie-klimat/Warsztat_5_WGSR.pdf" },
       { title: "Warsztat 6", url: "materialy/zarzadzanie-klimat/Warsztat_6_WGSR.pdf" },
       { title: "Warsztat 10", url: "materialy/zarzadzanie-klimat/Warsztat 10_WGSR.pdf" },
-      { title: "Warsztat 11", url: "materialy/zarzadzanie-klimat/Warsztat_11_WGSR.pdf" }
+      { title: "Warsztat 11", url: "materialy/zarzadzanie-klimat/Warsztat_11_WGSR.pdf" },
+      { title: "filmiki (Excel)", url: "materialy/zarzadzanie-klimat/filmiki.xlsx" }
     ],
     announcements: []
   },
